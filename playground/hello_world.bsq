@@ -1,0 +1,10 @@
+namespace NSMain;
+
+function printHello(name: String): String
+{
+    return String::concat("Hello ", name, "!");
+}
+
+entrypoint function main(): String {
+    return printHello("Nikita");
+}

@@ -1,0 +1,14 @@
+version: "3"
+services:
+  bosque:
+    image: "node:12-alpine"
+    working_dir: /app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./BosqueLanguage/:/home/node/app/bosque
+      - ./playground/:/home/node/app/playground
+      - ./.docker/entrypoint.sh:/entrypoint.sh:ro
+    expose:
+      - "8081"
+    entrypoint: /entrypoint.sh
